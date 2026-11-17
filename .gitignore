@@ -39,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local masters stay on your computer
+/masters/
+# images live in Cloudflare R2, not in Git
+/public/wallpapers/
