@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useMemo, useState } from "react";
 import Card from "@/components/Card";
+import CategoryPicker from "@/components/CategoryPicker";
 import type { Wallpaper } from "@/lib/wallpapers";
 
 type Mode = "phone" | "computer";
@@ -29,6 +30,12 @@ export default function Browse({ items, categories }: { items: Wallpaper[]; cate
       (w) => (cat === "All" || w.category === cat) && (!n || w.title.toLowerCase().includes(n) || w.tags.some((t) => t.toLowerCase().includes(n))),
     );
   }, [items, cat, q]);
+
+  const counts = useMemo(() => {
+    const m: Record<string, number> = {};
+    for (const w of items) m[w.category] = (m[w.category] ?? 0) + 1;
+    return m;
+  }, [items]);
 
   const grid = mode === "phone" ? "grid-cols-2 sm:grid-cols-3 lg:grid-cols-5" : "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3";
 
@@ -66,18 +73,11 @@ export default function Browse({ items, categories }: { items: Wallpaper[]; cate
       </section>
 
       <section className="mx-auto w-full max-w-7xl px-5 sm:px-8">
-        <div className="mb-8 flex gap-6 overflow-x-auto border-b border-line text-[15px]">
-          {["All", ...categories].map((c) => (
-            <button
-              key={c}
-              onClick={() => setCat(c)}
-              aria-pressed={cat === c}
-              className={`-mb-px shrink-0 border-b-2 pb-3 transition ${cat === c ? "border-ink font-medium text-ink" : "border-transparent text-muted hover:text-ink"}`}
-            >
-              {c}
-            </button>
-          ))}
-        </div>
+        <CategoryPicker categories={categories} counts={counts} total={items.length} value={cat} onChange={setCat} />
+        <p className="mb-6 text-sm text-muted" aria-live="polite">
+          {shown.length} {shown.length === 1 ? "wallpaper" : "wallpapers"}
+          {cat !== "All" && <> in <span className="font-medium text-ink">{cat}</span></>}
+        </p>
         {shown.length === 0 ? (
           <p className="py-16 text-muted">Nothing matches that search. Clear it or pick another category.</p>
         ) : (

@@ -2,78 +2,36 @@
   {
     "slug": "abstract-line",
     "title": "Abstract Line",
-    "category": "Uncategorized",
+    "category": "Abstract",
     "tags": [],
     "addedAt": "2026-11-18"
   },
   {
     "slug": "blackhole",
     "title": "Blackhole",
-    "category": "Uncategorized",
+    "category": "Space",
     "tags": [],
     "addedAt": "2026-11-18"
   },
   {
     "slug": "desert",
     "title": "Desert",
-    "category": "Uncategorized",
+    "category": "Nature",
     "tags": [],
     "addedAt": "2026-11-18"
   },
   {
     "slug": "nature",
     "title": "Nature",
-    "category": "Uncategorized",
+    "category": "Nature",
     "tags": [],
     "addedAt": "2026-11-18"
   },
   {
     "slug": "night",
     "title": "Night",
-    "category": "Uncategorized",
+    "category": "Abstract",
     "tags": [],
     "addedAt": "2026-11-18"
-  },
-  {
-    "slug": "amoled-ember",
-    "title": "AMOLED Ember",
-    "category": "Minimal Dark",
-    "tags": [],
-    "addedAt": "2026-11-17"
-  },
-  {
-    "slug": "forest-mist",
-    "title": "Forest Mist",
-    "category": "Nature",
-    "tags": [],
-    "addedAt": "2026-11-17"
-  },
-  {
-    "slug": "lavender-fade",
-    "title": "Lavender Fade",
-    "category": "Minimal Light",
-    "tags": [],
-    "addedAt": "2026-11-17"
-  },
-  {
-    "slug": "midnight-gradient",
-    "title": "Midnight Gradient",
-    "category": "Abstract",
-    "tags": [],
-    "addedAt": "2026-11-17"
-  },
-  {
-    "slug": "ocean-deep",
-    "title": "Ocean Deep",
-    "category": "Nature",
-    "tags": [],
-    "addedAt": "2026-11-17"
-  },
-  {
-    "slug": "sunset-haze",
-    "title": "Sunset Haze",
-    "category": "Abstract",
-    "tags": [],
-    "addedAt": "2026-11-17"
   }
 ]
