@@ -48,13 +48,20 @@ export default function DownloadButtons({ slug, phoneUrl, computerUrl }: Props) 
         key={kind}
         onClick={() => save(kind, url)}
         disabled={st === "busy"}
-        className={`flex w-full items-center gap-3 rounded-2xl px-5 py-4 text-left transition disabled:opacity-70 ${on ? "bg-accent text-white hover:brightness-110" : "border border-ink/20 bg-surface hover:border-ink"}`}
+        className={`group flex w-full items-center gap-3 rounded-2xl border-2 px-5 py-4 text-left transition duration-200 ease-out hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.99] disabled:opacity-70 disabled:hover:translate-y-0 ${
+          on
+            ? "border-accent bg-accent text-white shadow-[0_10px_24px_-12px_rgba(43,75,255,0.7)] hover:border-ink hover:bg-ink hover:shadow-[0_16px_32px_-14px_rgba(20,26,23,0.65)]"
+            : "border-ink/20 bg-surface hover:border-ink hover:bg-ink hover:text-white hover:shadow-[0_16px_32px_-14px_rgba(20,26,23,0.5)]"
+        }`}
       >
         <Icon kind={kind} />
         <span className="flex-1">
           <span className="block font-medium">{st === "busy" ? "Preparing download" : st === "done" ? "Saved. Download again" : `Download for ${kind}`}</span>
-          <span className={`block text-sm ${on ? "text-white/75" : "text-muted"}`}>{size}</span>
+          <span className={`block text-sm transition ${on ? "text-white/75" : "text-muted group-hover:text-white/70"}`}>{size}</span>
         </span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden className="shrink-0 opacity-60 transition duration-200 group-hover:translate-y-0.5 group-hover:opacity-100">
+          <path d="M12 4v12m0 0-5-5m5 5 5-5M5 20h14" />
+        </svg>
       </button>
     );
   };
