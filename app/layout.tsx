@@ -44,6 +44,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             <Link href="/contact/" className="hover:text-ink">Contact</Link>
           </nav>
         </footer>
+        {/* Cloudflare Web Analytics (cookieless) */}
+        <script
+          async
+          type="module"
+          src="https://static.cloudflareinsights.com/beacon.min.js"
+          data-cf-beacon='{"token": "19afe573bb9e4c19b217a05ea5191cc0"}'
+        />
       </body>
     </html>
   );

@@ -36,11 +36,18 @@ export default function Privacy() {
         the way you left it. This stays on your device and is not sent to us. You can clear it in your browser settings.
       </p>
 
-      <h2>Analytics and advertising</h2>
+      <h2>Analytics</h2>
       <p>
-        We may add privacy-friendly analytics to see which wallpapers people use. We may also show ads in the
-        future. If we do, we will update this page first and, where the law requires it, ask for your consent
-        before any advertising or tracking cookies are used.
+        We use Cloudflare Web Analytics to count visits and see which pages and wallpapers are popular. Cloudflare
+        describes this service as privacy-first: it does not use cookies or local storage for analytics and does
+        not track you across other sites. It reports basic information such as pages viewed, referring site,
+        country, browser, and device type.
+      </p>
+
+      <h2>Advertising</h2>
+      <p>
+        We may show ads in the future. If we do, we will update this page first and, where the law requires it,
+        ask for your consent before any advertising or tracking cookies are used.
       </p>
 
       <h2>Sharing</h2>
