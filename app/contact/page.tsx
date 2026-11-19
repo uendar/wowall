@@ -5,6 +5,7 @@ import { CONTACT_EMAIL, SITE_NAME } from "@/lib/site";
 export const metadata: Metadata = {
   title: `Contact - ${SITE_NAME}`,
   description: `Get in touch with ${SITE_NAME}: feedback, wallpaper requests, or a copyright concern.`,
+  alternates: { canonical: "/contact/" },
 };
 
 export default function Contact() {

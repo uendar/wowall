@@ -6,6 +6,7 @@ import { SITE_NAME } from "@/lib/site";
 export const metadata: Metadata = {
   title: `About - ${SITE_NAME}`,
   description: `${SITE_NAME} is a free wallpaper site. Pick phone or computer and download the right size in one tap.`,
+  alternates: { canonical: "/about/" },
 };
 
 export default function About() {

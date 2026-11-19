@@ -6,6 +6,7 @@ import { CONTACT_EMAIL, PRIVACY_UPDATED, SITE_NAME } from "@/lib/site";
 export const metadata: Metadata = {
   title: `Privacy Policy - ${SITE_NAME}`,
   description: `How ${SITE_NAME} handles your data: no accounts, no sign-up, and only the technical data needed to serve the site.`,
+  alternates: { canonical: "/privacy/" },
 };
 
 export default function Privacy() {

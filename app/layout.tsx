@@ -2,12 +2,27 @@ import type { Metadata } from "next";
 import "@fontsource-variable/bricolage-grotesque/wdth.css";
 import "@fontsource-variable/instrument-sans";
 import Link from "next/link";
-import { SITE_NAME } from "@/lib/site";
+import { SITE_NAME, SITE_URL } from "@/lib/site";
+import { files, wallpapers } from "@/lib/wallpapers";
 import "./globals.css";
 
+const TITLE = `${SITE_NAME} - Free HD and 4K wallpapers for phone and computer`;
+const DESCRIPTION = "Browse wallpapers and download the exact size for your phone or your computer.";
+
 export const metadata: Metadata = {
-  title: `${SITE_NAME} - Free HD and 4K wallpapers for phone and computer`,
-  description: "Browse wallpapers and download the exact size for your phone or your computer.",
+  metadataBase: new URL(SITE_URL),
+  title: TITLE,
+  description: DESCRIPTION,
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    siteName: SITE_NAME,
+    title: TITLE,
+    description: DESCRIPTION,
+    url: "/",
+    images: [{ url: files(wallpapers[0].slug).previewLandscape, width: 1600, height: 900 }],
+  },
+  twitter: { card: "summary_large_image", title: TITLE, description: DESCRIPTION },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
