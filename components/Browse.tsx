@@ -2,6 +2,9 @@
 import { useEffect, useMemo, useState } from "react";
 import Card from "@/components/Card";
 import CategoryPicker from "@/components/CategoryPicker";
+import CategoryTiles from "@/components/CategoryTiles";
+import FeaturedStage from "@/components/FeaturedStage";
+import { SITE_NAME } from "@/lib/site";
 import type { Wallpaper } from "@/lib/wallpapers";
 
 type Mode = "phone" | "computer";
@@ -37,44 +40,95 @@ export default function Browse({ items, categories }: { items: Wallpaper[]; cate
     return m;
   }, [items]);
 
+  const featured = useMemo(() => items.slice(0, 4), [items]);
+
+  const chooseCategory = (c: string) => {
+    setCat(c);
+    document.getElementById("gallery")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
   const grid = mode === "phone" ? "grid-cols-2 sm:grid-cols-3 lg:grid-cols-5" : "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3";
 
   return (
     <>
-      <section className="mx-auto w-full max-w-7xl px-5 pb-10 pt-10 sm:px-8 sm:pt-16">
-        <h1 className="rise font-display text-[clamp(2.75rem,8vw,6.5rem)] font-semibold leading-[0.95] tracking-[-0.035em]">
-          Wallpapers cut to fit your screen.
-        </h1>
-        <p className="rise mt-6 max-w-xl text-lg text-muted" style={{ animationDelay: "120ms" }}>
-          Choose phone or computer, then download the right size in one tap. All free.
-        </p>
-        <div className="rise mt-9 flex flex-wrap items-center gap-4" style={{ animationDelay: "240ms" }}>
-          <div role="group" aria-label="Device" className="inline-flex rounded-full bg-ink p-1.5 text-[15px]">
-            {(["phone", "computer"] as const).map((m) => (
-              <button
-                key={m}
-                onClick={() => pick(m)}
-                aria-pressed={mode === m}
-                className={`rounded-full px-6 py-2.5 font-medium capitalize transition ${mode === m ? "bg-surface text-ink" : "text-white/70 hover:text-white"}`}
-              >
-                {m}
-              </button>
-            ))}
-          </div>
-          <label className="sr-only" htmlFor="q">Search wallpapers</label>
-          <input
-            id="q"
-            value={q}
-            onChange={(e) => setQ(e.target.value)}
-            placeholder="Search"
-            className="w-full max-w-[16rem] rounded-full border border-line bg-surface px-5 py-3 text-[15px] outline-none placeholder:text-muted focus:border-accent"
-          />
+      {/* Hero: the name, one sentence, and a wallpaper shown on both screens */}
+      <section className="mx-auto grid w-full max-w-7xl items-center gap-12 px-5 pb-16 pt-8 sm:px-8 sm:pt-14 lg:grid-cols-[1fr_1.1fr] lg:gap-14">
+        <div>
+          <h1
+            className="rise break-words font-display text-[clamp(2.6rem,6.2vw,5.5rem)] leading-[0.92] tracking-[-0.045em]"
+            style={{ fontVariationSettings: '"wght" 800, "wdth" 100' }}
+          >
+            {SITE_NAME}
+          </h1>
+          <p className="rise mt-6 max-w-md text-xl leading-snug text-ink/80" style={{ animationDelay: "120ms" }}>
+            Wallpapers that fit your screen the first time. Pick a device, pick a mood, and download the exact size.
+          </p>
+          <dl className="rise mt-9 grid max-w-md grid-cols-3 gap-6 border-t border-line pt-6 text-sm" style={{ animationDelay: "240ms" }}>
+            <div>
+              <dt className="text-muted">Phone</dt>
+              <dd className="mt-1 font-medium">1440 × 3200</dd>
+            </div>
+            <div>
+              <dt className="text-muted">Computer</dt>
+              <dd className="mt-1 font-medium">3840 × 2160</dd>
+            </div>
+            <div>
+              <dt className="text-muted">Cost</dt>
+              <dd className="mt-1 font-medium">Free</dd>
+            </div>
+          </dl>
+          <a
+            href="#gallery"
+            className="rise mt-9 inline-flex rounded-full bg-ink px-7 py-3.5 font-medium text-white transition hover:-translate-y-0.5 hover:bg-accent"
+            style={{ animationDelay: "320ms" }}
+          >
+            Browse wallpapers
+          </a>
+        </div>
+        <div className="rise" style={{ animationDelay: "160ms" }}>
+          <FeaturedStage items={featured} />
         </div>
       </section>
 
-      <section className="mx-auto w-full max-w-7xl px-5 sm:px-8">
-        <CategoryPicker categories={categories} counts={counts} total={items.length} value={cat} onChange={setCat} />
-        <p className="mb-6 text-sm text-muted" aria-live="polite">
+      {/* Browse by category */}
+      <section className="mx-auto w-full max-w-7xl px-5 pb-16 sm:px-8">
+        <h2 className="mb-6 font-display text-3xl font-semibold tracking-tight">Pick a mood</h2>
+        <CategoryTiles items={items} categories={categories} counts={counts} value={cat} onPick={chooseCategory} />
+      </section>
+
+      {/* Gallery */}
+      <section id="gallery" className="mx-auto w-full max-w-7xl scroll-mt-6 px-5 sm:px-8">
+        <div className="rounded-[28px] bg-surface p-5 sm:p-7">
+          <div className="flex flex-wrap items-center justify-between gap-4">
+            <div role="group" aria-label="Device" className="inline-flex rounded-full bg-ink p-1.5 text-[15px]">
+              {(["phone", "computer"] as const).map((m) => (
+                <button
+                  key={m}
+                  onClick={() => pick(m)}
+                  aria-pressed={mode === m}
+                  className={`rounded-full px-6 py-2.5 font-medium capitalize transition ${mode === m ? "bg-surface text-ink" : "text-white/70 hover:text-white"}`}
+                >
+                  {m}
+                </button>
+              ))}
+            </div>
+            <div>
+              <label className="sr-only" htmlFor="q">Search wallpapers</label>
+              <input
+                id="q"
+                value={q}
+                onChange={(e) => setQ(e.target.value)}
+                placeholder="Search wallpapers"
+                className="w-full min-w-[15rem] rounded-full border border-line bg-paper px-5 py-3 text-[15px] outline-none placeholder:text-muted focus:border-accent"
+              />
+            </div>
+          </div>
+          <div className="mt-5">
+            <CategoryPicker categories={categories} counts={counts} total={items.length} value={cat} onChange={setCat} />
+          </div>
+        </div>
+
+        <p className="mb-6 mt-8 text-sm text-muted" aria-live="polite">
           {shown.length} {shown.length === 1 ? "wallpaper" : "wallpapers"}
           {cat !== "All" && <> in <span className="font-medium text-ink">{cat}</span></>}
         </p>

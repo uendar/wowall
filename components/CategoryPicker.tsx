@@ -20,7 +20,7 @@ export default function CategoryPicker({ categories, counts, total, value, onCha
   const count = (c: string) => (c === "All" ? total : counts[c] ?? 0);
 
   return (
-    <div className="mb-8">
+    <div>
       {/* Phones: a dropdown */}
       <div className="relative sm:hidden">
         <label htmlFor="cat" className="sr-only">Category</label>
