@@ -2,12 +2,27 @@ import type { Metadata } from "next";
 import "@fontsource-variable/bricolage-grotesque/wdth.css";
 import "@fontsource-variable/instrument-sans";
 import Link from "next/link";
-import { SITE_NAME } from "@/lib/site";
+import { SITE_NAME, SITE_URL } from "@/lib/site";
+import { files, wallpapers } from "@/lib/wallpapers";
 import "./globals.css";
 
+const TITLE = `${SITE_NAME} - Free HD and 4K wallpapers for phone and computer`;
+const DESCRIPTION = "Browse wallpapers and download the exact size for your phone or your computer.";
+
 export const metadata: Metadata = {
-  title: `${SITE_NAME} - Free HD and 4K wallpapers for phone and computer`,
-  description: "Browse wallpapers and download the exact size for your phone or your computer.",
+  metadataBase: new URL(SITE_URL),
+  title: TITLE,
+  description: DESCRIPTION,
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    siteName: SITE_NAME,
+    title: TITLE,
+    description: DESCRIPTION,
+    url: "/",
+    images: [{ url: files(wallpapers[0].slug).previewLandscape, width: 1600, height: 900 }],
+  },
+  twitter: { card: "summary_large_image", title: TITLE, description: DESCRIPTION },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -21,8 +36,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           </nav>
         </header>
         {children}
-        <footer className="mx-auto mt-24 w-full max-w-7xl border-t border-line px-5 py-8 text-sm text-muted sm:px-8">
-          Free for personal use. Please don&apos;t resell or redistribute.
+        <footer className="mx-auto mt-24 flex w-full max-w-7xl flex-col gap-4 border-t border-line px-5 py-8 text-sm text-muted sm:flex-row sm:items-center sm:justify-between sm:px-8">
+          <p>Free for personal use. Please don&apos;t resell or redistribute.</p>
+          <nav aria-label="Footer" className="flex gap-6">
+            <Link href="/about/" className="hover:text-ink">About</Link>
+            <Link href="/privacy/" className="hover:text-ink">Privacy</Link>
+            <Link href="/contact/" className="hover:text-ink">Contact</Link>
+          </nav>
         </footer>
       </body>
     </html>

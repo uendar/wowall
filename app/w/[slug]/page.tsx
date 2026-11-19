@@ -16,9 +16,22 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const w = getWallpaper(slug);
   if (!w) return {};
+  const title = `${w.title} wallpaper - free phone and 4K download`;
+  const label = w.title.toLowerCase() === w.category.toLowerCase() ? w.title : `${w.title} (${w.category})`;
+  const description = `Download ${label} free, sized for your phone or your computer.`;
+  const url = `/w/${w.slug}/`;
   return {
-    title: `${w.title} wallpaper - free phone and 4K download`,
-    description: `Download ${w.title} (${w.category}) free, sized for your phone or your computer.`,
+    title,
+    description,
+    alternates: { canonical: url },
+    openGraph: {
+      type: "website",
+      title,
+      description,
+      url,
+      images: [{ url: files(w.slug).previewLandscape, width: 1600, height: 900, alt: `${w.title} wallpaper` }],
+    },
+    twitter: { card: "summary_large_image", title, description },
   };
 }
 
