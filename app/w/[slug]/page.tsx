@@ -17,7 +17,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const w = getWallpaper(slug);
   if (!w) return {};
   const title = `${w.title} wallpaper - free phone and 4K download`;
-  const description = `Download ${w.title} (${w.category}) free, sized for your phone or your computer.`;
+  const label = w.title.toLowerCase() === w.category.toLowerCase() ? w.title : `${w.title} (${w.category})`;
+  const description = `Download ${label} free, sized for your phone or your computer.`;
   const url = `/w/${w.slug}/`;
   return {
     title,
