@@ -21,8 +21,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           </nav>
         </header>
         {children}
-        <footer className="mx-auto mt-24 w-full max-w-7xl border-t border-line px-5 py-8 text-sm text-muted sm:px-8">
-          Free for personal use. Please don&apos;t resell or redistribute.
+        <footer className="mx-auto mt-24 flex w-full max-w-7xl flex-col gap-4 border-t border-line px-5 py-8 text-sm text-muted sm:flex-row sm:items-center sm:justify-between sm:px-8">
+          <p>Free for personal use. Please don&apos;t resell or redistribute.</p>
+          <nav aria-label="Footer" className="flex gap-6">
+            <Link href="/about/" className="hover:text-ink">About</Link>
+            <Link href="/privacy/" className="hover:text-ink">Privacy</Link>
+            <Link href="/contact/" className="hover:text-ink">Contact</Link>
+          </nav>
         </footer>
       </body>
     </html>
