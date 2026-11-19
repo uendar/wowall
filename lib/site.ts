@@ -1,4 +1,4 @@
-export const SITE_NAME = "Wowall";
+export const SITE_NAME = "WoWallpaper";
 
 // Public address of the live site, no trailing slash. Used for the sitemap, canonical links and share previews.
 // Change it when you buy a domain (or set NEXT_PUBLIC_SITE_URL in Cloudflare).

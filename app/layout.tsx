@@ -31,9 +31,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html lang="en">
       <body className="min-h-screen">
         <header className="mx-auto flex w-full max-w-7xl items-center justify-between px-5 py-5 sm:px-8">
-          <Link href="/" className="font-display text-xl font-semibold tracking-tight">{SITE_NAME}</Link>
-          <nav className="flex gap-6 text-sm text-muted">
-            <Link href="/" className="hover:text-ink">Browse</Link>
+          <Link href="/" className="font-display text-lg font-extrabold tracking-tight">{SITE_NAME}</Link>
+          <nav aria-label="Main" className="flex gap-6 text-sm text-muted">
+            <Link href="/#gallery" className="hover:text-ink">Wallpapers</Link>
+            <Link href="/about/" className="hover:text-ink">About</Link>
+            <Link href="/contact/" className="hover:text-ink">Contact</Link>
           </nav>
         </header>
         {children}
