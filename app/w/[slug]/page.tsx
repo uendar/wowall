@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Card from "@/components/Card";
 import DownloadButtons from "@/components/DownloadButtons";
-import PhonePair from "@/components/PhonePair";
+import DeviceScene from "@/components/DeviceScene";
 import { files, getWallpaper, wallpapers } from "@/lib/wallpapers";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -48,15 +48,8 @@ export default async function WallpaperPage({ params }: Props) {
       <Link href="/" className="text-sm text-muted hover:text-ink">&larr; All wallpapers</Link>
       <div className="mt-6 grid items-start gap-10 lg:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)] lg:gap-16">
         {/* Device stage */}
-        <div className="rise relative rounded-[32px] bg-surface p-6 pb-14 sm:p-12 sm:pb-20">
-          <div className="mx-auto w-[88%]">
-            <div className="rounded-[14px] bg-ink p-[1.6%] shadow-[0_30px_60px_-30px_rgba(20,26,23,0.55)]">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={f.previewLandscape} alt={`${w.title} on a computer screen`} className="aspect-video w-full rounded-[7px] object-cover" />
-            </div>
-            <div className="mx-[-5%] h-3 rounded-b-[14px] bg-line" />
-          </div>
-          <PhonePair src={f.previewPortrait} alt={`${w.title} on a phone screen`} />
+        <div className="rise relative rounded-[32px] bg-surface p-6 sm:p-12">
+          <DeviceScene landscape={f.previewLandscape} portrait={f.previewPortrait} title={w.title} />
         </div>
 
         <div className="rise lg:pt-6" style={{ animationDelay: "120ms" }}>
