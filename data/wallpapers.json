@@ -6,7 +6,8 @@
     "Entertainment",
     "Landscape",
     "Lifestyle",
-    "OLED"
+    "OLED",
+    "Uncategorized"
   ],
   "wallpapers": [
     {
@@ -111,6 +112,13 @@
       "slug": "monolith-ascent",
       "title": "Monolith Ascent",
       "category": "Abstract",
+      "tags": [],
+      "addedAt": "2026-11-22"
+    },
+    {
+      "slug": "nomad-s-overlook",
+      "title": "Nomad S Overlook",
+      "category": "Uncategorized",
       "tags": [],
       "addedAt": "2026-11-22"
     },
