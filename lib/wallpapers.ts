@@ -8,8 +8,12 @@ export type Wallpaper = {
   addedAt: string;
 };
 
-export const wallpapers = data as Wallpaper[];
-export const categories = [...new Set(wallpapers.map((w) => w.category))].sort();
+export const wallpapers = data.wallpapers as Wallpaper[];
+// All known categories live in data/wallpapers.json. Only those with at least one wallpaper are shown on the site.
+export const allCategories = data.categories as string[];
+export const categories = [...new Set([...allCategories, ...wallpapers.map((w) => w.category)])]
+  .filter((c) => wallpapers.some((w) => w.category === c))
+  .sort();
 export const getWallpaper = (slug: string) => wallpapers.find((w) => w.slug === slug);
 
 // Where images are served from. Empty = this site's /wallpapers folder (local dev).

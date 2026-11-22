@@ -1,37 +1,48 @@
-[
-  {
-    "slug": "abstract-line",
-    "title": "Abstract Line",
-    "category": "Abstract",
-    "tags": [],
-    "addedAt": "2026-11-18"
-  },
-  {
-    "slug": "blackhole",
-    "title": "Blackhole",
-    "category": "Space",
-    "tags": [],
-    "addedAt": "2026-11-18"
-  },
-  {
-    "slug": "desert",
-    "title": "Desert",
-    "category": "Nature",
-    "tags": [],
-    "addedAt": "2026-11-18"
-  },
-  {
-    "slug": "nature",
-    "title": "Nature",
-    "category": "Nature",
-    "tags": [],
-    "addedAt": "2026-11-18"
-  },
-  {
-    "slug": "night",
-    "title": "Night",
-    "category": "Abstract",
-    "tags": [],
-    "addedAt": "2026-11-18"
-  }
-]
+{
+  "categories": [
+    "Abstract",
+    "Nature",
+    "Space",
+    "Entertainment",
+    "Landscape",
+    "Lifestyle",
+    "OLED"
+  ],
+  "wallpapers": [
+    {
+      "slug": "abstract-line",
+      "title": "Abstract Line",
+      "category": "Abstract",
+      "tags": [],
+      "addedAt": "2026-11-18"
+    },
+    {
+      "slug": "blackhole",
+      "title": "Blackhole",
+      "category": "Space",
+      "tags": [],
+      "addedAt": "2026-11-18"
+    },
+    {
+      "slug": "desert",
+      "title": "Desert",
+      "category": "Nature",
+      "tags": [],
+      "addedAt": "2026-11-18"
+    },
+    {
+      "slug": "nature",
+      "title": "Nature",
+      "category": "Nature",
+      "tags": [],
+      "addedAt": "2026-11-18"
+    },
+    {
+      "slug": "night",
+      "title": "Night",
+      "category": "Abstract",
+      "tags": [],
+      "addedAt": "2026-11-18"
+    }
+  ]
+}
