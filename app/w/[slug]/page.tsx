@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Card from "@/components/Card";
 import DownloadButtons from "@/components/DownloadButtons";
+import PhoneFrame from "@/components/PhoneFrame";
 import { files, getWallpaper, wallpapers } from "@/lib/wallpapers";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -55,10 +56,7 @@ export default async function WallpaperPage({ params }: Props) {
             </div>
             <div className="mx-[-5%] h-3 rounded-b-[14px] bg-line" />
           </div>
-          <div className="absolute bottom-6 right-6 w-[24%] rounded-[2.2rem] bg-ink p-[1.6%] shadow-[0_30px_60px_-20px_rgba(20,26,23,0.6)] sm:bottom-9 sm:right-10">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={f.previewPortrait} alt={`${w.title} on a phone screen`} className="aspect-[9/19] w-full rounded-[1.8rem] object-cover" />
-          </div>
+          <PhoneFrame src={f.previewPortrait} alt={`${w.title} on a phone screen`} className="absolute bottom-6 right-6 w-[24%] sm:bottom-9 sm:right-10" />
         </div>
 
         <div className="rise lg:pt-6" style={{ animationDelay: "120ms" }}>

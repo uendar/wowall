@@ -6,8 +6,7 @@
     "Entertainment",
     "Landscape",
     "Lifestyle",
-    "OLED",
-    "Uncategorized"
+    "OLED"
   ],
   "wallpapers": [
     {
@@ -118,7 +117,7 @@
     {
       "slug": "nomad-s-overlook",
       "title": "Nomad S Overlook",
-      "category": "Uncategorized",
+      "category": "Nature",
       "tags": [],
       "addedAt": "2026-11-22"
     },
