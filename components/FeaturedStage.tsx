@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
-import PhoneFrame from "@/components/PhoneFrame";
+import PhonePair from "@/components/PhonePair";
 import { files, type Wallpaper } from "@/lib/wallpapers";
 
 // The signature of the site: one wallpaper shown on a computer and a phone at the same time.
@@ -21,7 +21,7 @@ export default function FeaturedStage({ items }: { items: Wallpaper[] }) {
           </div>
           <div className="mx-[-5%] h-3 rounded-b-[14px] bg-line" />
         </div>
-        <PhoneFrame key={`${w.slug}-p`} src={f.previewPortrait} className="absolute bottom-5 right-5 w-[24%] transition duration-300 group-hover:-translate-y-1 sm:bottom-7 sm:right-8" />
+        <PhonePair key={`${w.slug}-p`} src={f.previewPortrait} />
       </Link>
 
       <div className="mt-4 flex items-center justify-between gap-4 px-1">
