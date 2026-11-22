@@ -13,8 +13,9 @@ const OUT = "public/wallpapers";
 const DATA = "data/wallpapers.json";
 
 const meta = fs.existsSync(`${MASTERS}/meta.json`) ? JSON.parse(fs.readFileSync(`${MASTERS}/meta.json`, "utf8")) : {};
-const existing = fs.existsSync(DATA) ? JSON.parse(fs.readFileSync(DATA, "utf8")) : [];
-const bySlug = new Map(existing.map((w) => [w.slug, w]));
+const stored = fs.existsSync(DATA) ? JSON.parse(fs.readFileSync(DATA, "utf8")) : { categories: [], wallpapers: [] };
+const categories = [...(stored.categories ?? [])];
+const bySlug = new Map((stored.wallpapers ?? []).map((w) => [w.slug, w]));
 
 const files = fs.readdirSync(MASTERS);
 const slugs = [...new Set(files.filter((f) => /-(portrait|landscape)\.(jpe?g|png)$/i.test(f)).map((f) => f.replace(/-(portrait|landscape)\.\w+$/i, "")))];
@@ -45,7 +46,10 @@ for (const slug of slugs) {
   });
   console.log(`Processed ${slug}`);
 }
+for (const w of bySlug.values()) {
+  if (!categories.some((c) => c.toLowerCase() === w.category.toLowerCase())) categories.push(w.category);
+}
 const list = [...bySlug.values()].sort((a, b) => b.addedAt.localeCompare(a.addedAt) || a.slug.localeCompare(b.slug));
 fs.mkdirSync("data", { recursive: true });
-fs.writeFileSync(DATA, JSON.stringify(list, null, 2) + "\n");
+fs.writeFileSync(DATA, JSON.stringify({ categories, wallpapers: list }, null, 2) + "\n");
 console.log(`wallpapers.json now has ${list.length} wallpapers`);

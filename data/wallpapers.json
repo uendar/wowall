@@ -1,37 +1,196 @@
-[
-  {
-    "slug": "abstract-line",
-    "title": "Abstract Line",
-    "category": "Abstract",
-    "tags": [],
-    "addedAt": "2026-11-18"
-  },
-  {
-    "slug": "blackhole",
-    "title": "Blackhole",
-    "category": "Space",
-    "tags": [],
-    "addedAt": "2026-11-18"
-  },
-  {
-    "slug": "desert",
-    "title": "Desert",
-    "category": "Nature",
-    "tags": [],
-    "addedAt": "2026-11-18"
-  },
-  {
-    "slug": "nature",
-    "title": "Nature",
-    "category": "Nature",
-    "tags": [],
-    "addedAt": "2026-11-18"
-  },
-  {
-    "slug": "night",
-    "title": "Night",
-    "category": "Abstract",
-    "tags": [],
-    "addedAt": "2026-11-18"
-  }
-]
+{
+  "categories": [
+    "Abstract",
+    "Nature",
+    "Space",
+    "Entertainment",
+    "Landscape",
+    "Lifestyle",
+    "OLED",
+    "Uncategorized"
+  ],
+  "wallpapers": [
+    {
+      "slug": "aether-wave",
+      "title": "Aether Wave",
+      "category": "Abstract",
+      "tags": [],
+      "addedAt": "2026-11-22"
+    },
+    {
+      "slug": "alpenglow-reflection",
+      "title": "Alpenglow Reflection",
+      "category": "Landscape",
+      "tags": [],
+      "addedAt": "2026-11-22"
+    },
+    {
+      "slug": "alpenglow-valley",
+      "title": "Alpenglow Valley",
+      "category": "Landscape",
+      "tags": [],
+      "addedAt": "2026-11-22"
+    },
+    {
+      "slug": "botanical-arc",
+      "title": "Botanical Arc",
+      "category": "Abstract",
+      "tags": [],
+      "addedAt": "2026-11-22"
+    },
+    {
+      "slug": "cosmic-soltitude",
+      "title": "Cosmic Soltitude",
+      "category": "OLED",
+      "tags": [],
+      "addedAt": "2026-11-22"
+    },
+    {
+      "slug": "dark-current",
+      "title": "Dark Current",
+      "category": "Abstract",
+      "tags": [],
+      "addedAt": "2026-11-22"
+    },
+    {
+      "slug": "data-flow",
+      "title": "Data Flow",
+      "category": "Abstract",
+      "tags": [],
+      "addedAt": "2026-11-22"
+    },
+    {
+      "slug": "emerald-coast",
+      "title": "Emerald Coast",
+      "category": "Lifestyle",
+      "tags": [],
+      "addedAt": "2026-11-22"
+    },
+    {
+      "slug": "fluid-night",
+      "title": "Fluid Night",
+      "category": "OLED",
+      "tags": [],
+      "addedAt": "2026-11-22"
+    },
+    {
+      "slug": "golden-dunes-blue-waters",
+      "title": "Golden Dunes, Blue Waters",
+      "category": "Abstract",
+      "tags": [],
+      "addedAt": "2026-11-22"
+    },
+    {
+      "slug": "golden-valleys",
+      "title": "Golden Valleys",
+      "category": "Abstract",
+      "tags": [],
+      "addedAt": "2026-11-22"
+    },
+    {
+      "slug": "in-depth-of-cosmos",
+      "title": "In depth of Cosmos",
+      "category": "Landscape",
+      "tags": [],
+      "addedAt": "2026-11-22"
+    },
+    {
+      "slug": "liquid-copper",
+      "title": "Liquid Copper",
+      "category": "Abstract",
+      "tags": [],
+      "addedAt": "2026-11-22"
+    },
+    {
+      "slug": "midnight-mirage",
+      "title": "Midnight Mirage",
+      "category": "Lifestyle",
+      "tags": [],
+      "addedAt": "2026-11-22"
+    },
+    {
+      "slug": "monolith-ascent",
+      "title": "Monolith Ascent",
+      "category": "Abstract",
+      "tags": [],
+      "addedAt": "2026-11-22"
+    },
+    {
+      "slug": "nomad-s-overlook",
+      "title": "Nomad S Overlook",
+      "category": "Uncategorized",
+      "tags": [],
+      "addedAt": "2026-11-22"
+    },
+    {
+      "slug": "nomads-overlook",
+      "title": "Nomad's Overlook",
+      "category": "Landscape",
+      "tags": [],
+      "addedAt": "2026-11-22"
+    },
+    {
+      "slug": "origami-plane",
+      "title": "Origami Plane",
+      "category": "Entertainment",
+      "tags": [],
+      "addedAt": "2026-11-22"
+    },
+    {
+      "slug": "pale-solstice",
+      "title": "Pale Solstice",
+      "category": "Abstract",
+      "tags": [],
+      "addedAt": "2026-11-22"
+    },
+    {
+      "slug": "riviera-run",
+      "title": "Riviera Run",
+      "category": "Lifestyle",
+      "tags": [],
+      "addedAt": "2026-11-22"
+    },
+    {
+      "slug": "rosso-gate",
+      "title": "Rosso Gate",
+      "category": "Lifestyle",
+      "tags": [],
+      "addedAt": "2026-11-22"
+    },
+    {
+      "slug": "silent-sands",
+      "title": "Silent Sands",
+      "category": "Landscape",
+      "tags": [],
+      "addedAt": "2026-11-22"
+    },
+    {
+      "slug": "solitude-bay",
+      "title": "Solitude Bay",
+      "category": "Lifestyle",
+      "tags": [],
+      "addedAt": "2026-11-22"
+    },
+    {
+      "slug": "terra-tide",
+      "title": "Terra & Tide",
+      "category": "Landscape",
+      "tags": [],
+      "addedAt": "2026-11-22"
+    },
+    {
+      "slug": "whispering-woods",
+      "title": "Whispering Woods",
+      "category": "Landscape",
+      "tags": [],
+      "addedAt": "2026-11-22"
+    },
+    {
+      "slug": "workshop-icon",
+      "title": "Workshop Icon",
+      "category": "Lifestyle",
+      "tags": [],
+      "addedAt": "2026-11-22"
+    }
+  ]
+}
