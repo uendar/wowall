@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Card from "@/components/Card";
 import DownloadButtons from "@/components/DownloadButtons";
-import PhoneFrame from "@/components/PhoneFrame";
+import PhonePair from "@/components/PhonePair";
 import { files, getWallpaper, wallpapers } from "@/lib/wallpapers";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -56,7 +56,7 @@ export default async function WallpaperPage({ params }: Props) {
             </div>
             <div className="mx-[-5%] h-3 rounded-b-[14px] bg-line" />
           </div>
-          <PhoneFrame src={f.previewPortrait} alt={`${w.title} on a phone screen`} className="absolute bottom-6 right-6 w-[24%] sm:bottom-9 sm:right-10" />
+          <PhonePair src={f.previewPortrait} alt={`${w.title} on a phone screen`} />
         </div>
 
         <div className="rise lg:pt-6" style={{ animationDelay: "120ms" }}>
