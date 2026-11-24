@@ -186,15 +186,8 @@
     },
     {
       "slug": "nomad-s-overlook",
-      "title": "Nomad S Overlook",
-      "category": "Nature",
-      "tags": [],
-      "addedAt": "2026-11-22"
-    },
-    {
-      "slug": "nomads-overlook",
       "title": "Nomad's Overlook",
-      "category": "Landscape",
+      "category": "Nature",
       "tags": [],
       "addedAt": "2026-11-22"
     },
