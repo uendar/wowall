@@ -10,6 +10,76 @@
   ],
   "wallpapers": [
     {
+      "slug": "cosmic-currents",
+      "title": "Cosmic Currents",
+      "category": "OLED",
+      "tags": [],
+      "addedAt": "2026-11-24"
+    },
+    {
+      "slug": "game-on",
+      "title": "Game On",
+      "category": "Entertainment",
+      "tags": [],
+      "addedAt": "2026-11-24"
+    },
+    {
+      "slug": "iridescent-peak",
+      "title": "Iridescent Peak",
+      "category": "Abstract",
+      "tags": [],
+      "addedAt": "2026-11-24"
+    },
+    {
+      "slug": "last-match",
+      "title": "Last Match",
+      "category": "Entertainment",
+      "tags": [],
+      "addedAt": "2026-11-24"
+    },
+    {
+      "slug": "luxe-geometry",
+      "title": "Luxe Geometry",
+      "category": "Abstract",
+      "tags": [],
+      "addedAt": "2026-11-24"
+    },
+    {
+      "slug": "obsidian-giza",
+      "title": "Obsidian Giza",
+      "category": "OLED",
+      "tags": [],
+      "addedAt": "2026-11-24"
+    },
+    {
+      "slug": "ocean-pulse",
+      "title": "Ocean Pulse",
+      "category": "Lifestyle",
+      "tags": [],
+      "addedAt": "2026-11-24"
+    },
+    {
+      "slug": "serene-horizon",
+      "title": "Serene Horizon",
+      "category": "Lifestyle",
+      "tags": [],
+      "addedAt": "2026-11-24"
+    },
+    {
+      "slug": "sunset-cove",
+      "title": "Sunset Cove",
+      "category": "Landscape",
+      "tags": [],
+      "addedAt": "2026-11-24"
+    },
+    {
+      "slug": "twilight-valley",
+      "title": "Twilight Valley",
+      "category": "Landscape",
+      "tags": [],
+      "addedAt": "2026-11-24"
+    },
+    {
       "slug": "aether-wave",
       "title": "Aether Wave",
       "category": "Abstract",
