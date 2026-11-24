@@ -1,7 +1,6 @@
 {
   "categories": [
     "Abstract",
-    "Nature",
     "Space",
     "Entertainment",
     "Landscape",
@@ -187,7 +186,7 @@
     {
       "slug": "nomad-s-overlook",
       "title": "Nomad's Overlook",
-      "category": "Nature",
+      "category": "Landscape",
       "tags": [],
       "addedAt": "2026-11-22"
     },

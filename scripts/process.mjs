@@ -40,7 +40,7 @@ for (const slug of slugs) {
   bySlug.set(slug, {
     slug,
     title: prev.title ?? m.title ?? titleCase(slug),
-    category: prev.category ?? m.category ?? "Nature",
+    category: prev.category ?? m.category ?? "Landscape",
     tags: prev.tags ?? m.tags ?? [],
     addedAt: prev.addedAt ?? new Date().toISOString().slice(0, 10),
   });

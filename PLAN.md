@@ -73,7 +73,7 @@ scripts/             process.mjs, make-samples.mjs, upload-r2.sh, postbuild.mjs
 2. Put both files in `masters/`. Use lowercase names with dashes.
 3. Optional: add the title and category in `masters/meta.json`:
    ```json
-   { "my-name": { "title": "My Name", "category": "Nature" } }
+   { "my-name": { "title": "My Name", "category": "Landscape" } }
    ```
 4. Run `npm run process`. This creates the phone file, computer file and previews in `public/wallpapers/` and updates `data/wallpapers.json`.
 5. Edit `data/wallpapers.json` to add `tags` (used by search).
