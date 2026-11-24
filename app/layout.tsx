@@ -14,7 +14,10 @@ export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
   alternates: { canonical: "/" },
-  verification: { google: "IZCXNFJCNePz6SNma4UHrEraLVkJJJkF_stZSUGpu5s" },
+  verification: {
+    // One tag per Search Console property: the workers.dev one and the wowallpaper.app one.
+    google: ["IZCXNFJCNePz6SNma4UHrEraLVkJJJkF_stZSUGpu5s", "DUoAvfh8sCk6Vqzr8xRhQMfZEYuaawi79jrMWgDON5E"],
+  },
   openGraph: {
     type: "website",
     siteName: SITE_NAME,
